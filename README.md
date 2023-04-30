@@ -1,5 +1,5 @@
 # Meals # 
-This is a demonstration of 'The Composable Architecture' also known TCA. It is a derivative of redux but differs in how it manages individual state of the components.
+This is a demonstration of 'The Composable Architecture' also known TCA. 
 
 # Explaination # 
 TCA is a functional and composable architecture for building SwiftUI applications. It consists of several core concepts, including state, actions, reducers, and effects.
@@ -27,3 +27,6 @@ When an effect is triggered, it is processed by a closure that can return a publ
 The publisher can then be used to update the application state through another action, or to trigger another effect. This allows for a chain of effects that can be composed and tested independently of the view layer.
 
 Overall, TCA provides a powerful and composable architecture for building SwiftUI applications. By separating concerns and using pure functions, TCA can make it easier to reason about and test the application's behavior.
+
+## SPM used: ##
+https://github.com/pointfreeco/swift-composable-architecture
