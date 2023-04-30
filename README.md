@@ -6,21 +6,8 @@ TCA is a functional and composable architecture for building SwiftUI application
 
 ## Here is a diagram that shows how these concepts relate to each other: ##
 
-             +------------+
-             |   Action   |
-             +-----+------+
-                   |
-                   |
-                   v
-             +-----+------+
-             |  Reducer   |
-             +-----+------+
-                   |
-                   |
-                   v
-+-------+    +-----+------+    +-------+
-| State |<---|  Effects  |<---| Action|
-+-------+    +-----------+    +-------+
+
+<img width="399" alt="Screenshot 2023-04-30 at 9 25 22 PM" src="https://user-images.githubusercontent.com/6280238/235374724-ea9b5c87-67db-4756-a7e6-e1a6493b4537.png">
 
 
 In TCA, the application state is a single source of truth that can be accessed by any view in the application. When the user interacts with the application, they trigger actions, which are then processed by the reducer.
@@ -31,33 +18,10 @@ In addition to the reducer, TCA also has an effects system that can be used to h
 
 ## Here is a diagram that shows how effects work in TCA: ##
 
-                 +------------+
-                 |   Action   |
-                 +-----+------+
-                       |
-                       |
-                       v
-                 +-----+------+
-                 |  Reducer   |
-                 +-----+------+
-                       |
-                       |
-                       v
-+-------+    +-----------+    +-------+
-| State |<---|  Effects  |<---| Action|
-+-------+    +-----+------+    +-------+
-                       |
-                       |
-                       v
-                 +-----+------+
-                 |  Closure  |
-                 +-----+------+
-                       |
-                       |
-                       v
-                 +-----+------+
-                 |  Publisher|
-                 +-----+------+
+
+<img width="378" alt="Screenshot 2023-04-30 at 9 25 40 PM" src="https://user-images.githubusercontent.com/6280238/235374716-c99e3f21-3026-40a9-990d-f3a5efc27d39.png">
+
+
 When an effect is triggered, it is processed by a closure that can return a publisher. The publisher represents the result of the effect, such as a network response.
 
 The publisher can then be used to update the application state through another action, or to trigger another effect. This allows for a chain of effects that can be composed and tested independently of the view layer.
